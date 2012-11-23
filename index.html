@@ -1,9 +1,18 @@
 <html>
 <head>
   <title>JQRating</title>
-  <script type="text/javascript" src="/src/jqrating.js"></script>
+  <link rel="stylesheet" href="/css/jqrating.css">
+  <script type="text/javascript" src="/js/jquery.js"></script>
+  <script type="text/javascript" src="/js/widget.js"></script>
+  <script type="text/javascript" src="/js/jqrating.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('#rating1').rating({ value : '3' });
+    });
+
+  </script>
 </head>
 <body>
-
+  <span id="rating1"></span>
 </body>
 </html>
