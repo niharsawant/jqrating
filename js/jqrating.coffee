@@ -3,6 +3,7 @@ $.widget('ui.rating',
     value    : 0
     limit    : 5
     readOnly : true
+    onRate   : (points) ->
 
   _create : () ->
     if isNaN(@options.limit) then return
@@ -35,12 +36,18 @@ $.widget('ui.rating',
         .find('.ui-rating-star').addClass('ui-rating-readonly')
     else
       thisref = @
-      @element.delegate('.ui-rating-star', 'mouseenter', (ev) ->
-        id = $(@).attr('id')
-        count = parseInt(/ui-rating-star(\d+)/.exec(id)[1], 10)
-        thisref._setValue(count)
-      )
       @element.delegate('.ui-rating-star', 'mouseleave', (ev) => @_setValue())
+        .delegate('.ui-rating-star', 'mouseenter', (ev) ->
+          id = $(@).attr('id')
+          count = parseInt(/ui-rating-star(\d+)/.exec(id)[1], 10)
+          thisref._setValue(count)
+        )
+        .delegate('.ui-rating-star', 'click', (ev) ->
+          id = $(@).attr('id')
+          count = parseInt(/ui-rating-star(\d+)/.exec(id)[1], 10)
+          thisref.options.value = count
+          thisref.options.onRate.call(thisref, count)
+        )
         .find('.ui-rating-star').removeClass('ui-rating-readonly')
 
   _disable : () ->

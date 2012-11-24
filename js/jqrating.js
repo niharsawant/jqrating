@@ -4,7 +4,8 @@
     options: {
       value: 0,
       limit: 5,
-      readOnly: true
+      readOnly: true,
+      onRate: function(points) {}
     },
     _create: function() {
       if (isNaN(this.options.limit)) {
@@ -54,14 +55,19 @@
         return this.element.undelegate('.ui-rating-star', 'mouseenter').undelegate('.ui-rating-star', 'mouseleave').find('.ui-rating-star').addClass('ui-rating-readonly');
       } else {
         thisref = this;
-        this.element.delegate('.ui-rating-star', 'mouseenter', function(ev) {
+        return this.element.delegate('.ui-rating-star', 'mouseleave', function(ev) {
+          return _this._setValue();
+        }).delegate('.ui-rating-star', 'mouseenter', function(ev) {
           var count, id;
           id = $(this).attr('id');
           count = parseInt(/ui-rating-star(\d+)/.exec(id)[1], 10);
           return thisref._setValue(count);
-        });
-        return this.element.delegate('.ui-rating-star', 'mouseleave', function(ev) {
-          return _this._setValue();
+        }).delegate('.ui-rating-star', 'click', function(ev) {
+          var count, id;
+          id = $(this).attr('id');
+          count = parseInt(/ui-rating-star(\d+)/.exec(id)[1], 10);
+          thisref.options.value = count;
+          return thisref.options.onRate.call(thisref, count);
         }).find('.ui-rating-star').removeClass('ui-rating-readonly');
       }
     },
