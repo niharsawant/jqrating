@@ -13,11 +13,11 @@
       if (this.options.value > this.options.limit) {
         return;
       }
-      this._setStars();
+      this._initStars();
       this._setValue();
       return this._setMode();
     },
-    _setStars: function() {
+    _initStars: function() {
       var elem, i, _i, _ref, _results;
       if (isNaN(this.options.limit)) {
         return;
@@ -60,6 +60,15 @@
         });
       }
     },
+    _disable: function() {
+      this.element.find('.ui-rating-star').removeClass('ui-rating-starred ui-rating-unstarred').addClass('ui-rating-disabled');
+      return this._setMode();
+    },
+    _enable: function() {
+      this.element.find('.ui-rating-star').removeClass('ui-rating-disabled');
+      this._setValue();
+      return this._setMode();
+    },
     _setOption: function(key, value) {
       switch (key) {
         case 'limit':
@@ -67,7 +76,7 @@
             return;
           }
           this.options.limit = value;
-          this._setStars();
+          this._initStars();
           return this._setValue();
         case 'value':
           if (this.options.value > this.options.limit) {
@@ -78,6 +87,14 @@
         case 'readOnly':
           this.options.readOnly = value;
           return this._setMode();
+        case 'disabled':
+          this.options.disabled = value;
+          if (value) {
+            return this._disable();
+          } else {
+            return this._enable();
+          }
+          break;
         default:
           return console.error('Invalid Option');
       }

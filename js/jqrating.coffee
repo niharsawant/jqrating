@@ -7,12 +7,11 @@ $.widget('ui.rating',
   _create : () ->
     if isNaN(@options.limit) then return
     if @options.value > @options.limit then return
-
-    @_setStars()
+    @_initStars()
     @_setValue()
     @_setMode()
 
-  _setStars : () ->
+  _initStars : () ->
     if isNaN(@options.limit) then return
     @element.empty()
     for i in [0...@options.limit]
@@ -37,13 +36,23 @@ $.widget('ui.rating',
       @element.delegate('.ui-rating-star', 'mouseleave', (ev) =>
         console.log 'leave'
       )
+  _disable : () ->
+    @element.find('.ui-rating-star')
+      .removeClass('ui-rating-starred ui-rating-unstarred')
+      .addClass('ui-rating-disabled')
+    @_setMode()
+
+  _enable : () ->
+    @element.find('.ui-rating-star').removeClass('ui-rating-disabled')
+    @_setValue()
+    @_setMode()
 
   _setOption : (key, value) ->
     switch key
       when 'limit'
         if isNaN(@options.limit) then return
         @options.limit = value
-        @_setStars()
+        @_initStars()
         @_setValue()
       when 'value'
         if @options.value > @options.limit then return
@@ -52,6 +61,10 @@ $.widget('ui.rating',
       when 'readOnly'
         @options.readOnly = value
         @_setMode()
+      when 'disabled'
+        @options.disabled = value
+        if value then @_disable()
+        else @_enable()
       else console.error('Invalid Option')
 
 )
