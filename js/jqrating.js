@@ -30,34 +30,39 @@
       }
       return _results;
     },
-    _setValue: function() {
-      var elem, i, _i, _ref, _results;
-      if (this.options.value > this.options.limit) {
+    _setValue: function(value) {
+      var elem, i, points, _i, _ref, _results;
+      points = value || this.options.value;
+      if (points > this.options.limit) {
         return;
       }
       _results = [];
       for (i = _i = 0, _ref = this.options.limit; 0 <= _ref ? _i < _ref : _i > _ref; i = 0 <= _ref ? ++_i : --_i) {
         elem = this.element.find("#ui-rating-star" + (i + 1));
-        if (i < this.options.value) {
-          _results.push(elem.addClass("ui-rating-starred"));
+        if (i < points) {
+          _results.push(elem.removeClass("ui-rating-unstarred").addClass("ui-rating-starred"));
         } else {
-          _results.push(elem.addClass("ui-rating-unstarred"));
+          _results.push(elem.removeClass("ui-rating-starred").addClass("ui-rating-unstarred"));
         }
       }
       return _results;
     },
     _setMode: function() {
-      var _this = this;
+      var thisref,
+        _this = this;
       if (this.options.readOnly || this.options.disabled) {
-        this.element.undelegate('.ui-rating-star', 'mouseenter');
-        return this.element.undelegate('.ui-rating-star', 'mouseleave');
+        return this.element.undelegate('.ui-rating-star', 'mouseenter').undelegate('.ui-rating-star', 'mouseleave').find('.ui-rating-star').addClass('ui-rating-readonly');
       } else {
+        thisref = this;
         this.element.delegate('.ui-rating-star', 'mouseenter', function(ev) {
-          return console.log('enter');
+          var count, id;
+          id = $(this).attr('id');
+          count = parseInt(/ui-rating-star(\d+)/.exec(id)[1], 10);
+          return thisref._setValue(count);
         });
         return this.element.delegate('.ui-rating-star', 'mouseleave', function(ev) {
-          return console.log('leave');
-        });
+          return _this._setValue();
+        }).find('.ui-rating-star').removeClass('ui-rating-readonly');
       }
     },
     _disable: function() {

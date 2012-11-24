@@ -18,24 +18,31 @@ $.widget('ui.rating',
       elem = "<span id='ui-rating-star#{i+1}' class='ui-rating-star'></span>"
       @element.append(elem)
 
-  _setValue : () ->
-    if @options.value > @options.limit then return
+  _setValue : (value) ->
+    points = value or @options.value
+    if points > @options.limit then return
     for i in [0...@options.limit]
       elem = @element.find("#ui-rating-star#{i+1}")
-      if i < @options.value then elem.addClass("ui-rating-starred")
-      else elem.addClass("ui-rating-unstarred")
+      if i < points
+        elem.removeClass("ui-rating-unstarred").addClass("ui-rating-starred")
+      else
+        elem.removeClass("ui-rating-starred").addClass("ui-rating-unstarred")
 
   _setMode : () ->
     if @options.readOnly or @options.disabled
       @element.undelegate('.ui-rating-star', 'mouseenter')
-      @element.undelegate('.ui-rating-star', 'mouseleave')
+        .undelegate('.ui-rating-star', 'mouseleave')
+        .find('.ui-rating-star').addClass('ui-rating-readonly')
     else
-      @element.delegate('.ui-rating-star', 'mouseenter', (ev) =>
-        console.log 'enter'
+      thisref = @
+      @element.delegate('.ui-rating-star', 'mouseenter', (ev) ->
+        id = $(@).attr('id')
+        count = parseInt(/ui-rating-star(\d+)/.exec(id)[1], 10)
+        thisref._setValue(count)
       )
-      @element.delegate('.ui-rating-star', 'mouseleave', (ev) =>
-        console.log 'leave'
-      )
+      @element.delegate('.ui-rating-star', 'mouseleave', (ev) => @_setValue())
+        .find('.ui-rating-star').removeClass('ui-rating-readonly')
+
   _disable : () ->
     @element.find('.ui-rating-star')
       .removeClass('ui-rating-starred ui-rating-unstarred')
