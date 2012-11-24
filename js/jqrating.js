@@ -3,22 +3,38 @@
   $.widget('ui.rating', {
     options: {
       value: 0,
-      limit: 5
+      limit: 5,
+      readOnly: true
     },
     _create: function() {
-      var elem, i, _i, _ref;
-      for (i = _i = 0, _ref = this.options.limit; 0 <= _ref ? _i < _ref : _i > _ref; i = 0 <= _ref ? ++_i : --_i) {
-        elem = "<span id='ui-rating-star" + (i + 1) + "' class='ui-rating-star'></span>";
-        this.element.append(elem);
-      }
-      return this._rate.call(this, this.options.value);
-    },
-    _rate: function(value) {
-      var elem, i, _i, _ref, _results;
-      if (value > this.options.limit) {
+      if (isNaN(this.options.limit)) {
         return;
       }
-      this.options.value = value;
+      if (this.options.value > this.options.limit) {
+        return;
+      }
+      this._setStars();
+      this._setValue();
+      return this._setMode();
+    },
+    _setStars: function() {
+      var elem, i, _i, _ref, _results;
+      if (isNaN(this.options.limit)) {
+        return;
+      }
+      this.element.empty();
+      _results = [];
+      for (i = _i = 0, _ref = this.options.limit; 0 <= _ref ? _i < _ref : _i > _ref; i = 0 <= _ref ? ++_i : --_i) {
+        elem = "<span id='ui-rating-star" + (i + 1) + "' class='ui-rating-star'></span>";
+        _results.push(this.element.append(elem));
+      }
+      return _results;
+    },
+    _setValue: function() {
+      var elem, i, _i, _ref, _results;
+      if (this.options.value > this.options.limit) {
+        return;
+      }
       _results = [];
       for (i = _i = 0, _ref = this.options.limit; 0 <= _ref ? _i < _ref : _i > _ref; i = 0 <= _ref ? ++_i : --_i) {
         elem = this.element.find("#ui-rating-star" + (i + 1));
@@ -29,6 +45,42 @@
         }
       }
       return _results;
+    },
+    _setMode: function() {
+      var _this = this;
+      if (this.options.readOnly || this.options.disabled) {
+        this.element.undelegate('.ui-rating-star', 'mouseenter');
+        return this.element.undelegate('.ui-rating-star', 'mouseleave');
+      } else {
+        this.element.delegate('.ui-rating-star', 'mouseenter', function(ev) {
+          return console.log('enter');
+        });
+        return this.element.delegate('.ui-rating-star', 'mouseleave', function(ev) {
+          return console.log('leave');
+        });
+      }
+    },
+    _setOption: function(key, value) {
+      switch (key) {
+        case 'limit':
+          if (isNaN(this.options.limit)) {
+            return;
+          }
+          this.options.limit = value;
+          this._setStars();
+          return this._setValue();
+        case 'value':
+          if (this.options.value > this.options.limit) {
+            return;
+          }
+          this.options.value = value;
+          return this._setValue();
+        case 'readOnly':
+          this.options.readOnly = value;
+          return this._setMode();
+        default:
+          return console.error('Invalid Option');
+      }
     }
   });
 
