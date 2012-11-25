@@ -3,7 +3,7 @@ $.widget('ui.rating',
     value    : 0
     limit    : 5
     readOnly : true
-    onRate   : (points) ->
+    onRate   : null
 
   _create : () ->
     if isNaN(@options.limit) then return
@@ -53,7 +53,8 @@ $.widget('ui.rating',
           id = $(@).attr('id')
           count = parseInt(/ui-rating-star(\d+)/.exec(id)[1], 10)
           thisref.options.value = count
-          thisref.options.onRate.call(thisref, count)
+          if thisref.options.onRate
+            thisref.options.onRate.call(thisref, count)
         )
         .find('.ui-rating-star').removeClass('ui-rating-readonly')
 

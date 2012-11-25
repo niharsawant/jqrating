@@ -5,7 +5,7 @@
       value: 0,
       limit: 5,
       readOnly: true,
-      onRate: function(points) {}
+      onRate: null
     },
     _create: function() {
       if (isNaN(this.options.limit)) {
@@ -72,7 +72,9 @@
           id = $(this).attr('id');
           count = parseInt(/ui-rating-star(\d+)/.exec(id)[1], 10);
           thisref.options.value = count;
-          return thisref.options.onRate.call(thisref, count);
+          if (thisref.options.onRate) {
+            return thisref.options.onRate.call(thisref, count);
+          }
         }).find('.ui-rating-star').removeClass('ui-rating-readonly');
       }
     },
