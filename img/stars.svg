@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.3.1 r9886"
+   sodipodi:docname="New document 1">
+  <defs
+     id="defs4">
+    <filter
+       inkscape:collect="always"
+       id="filter3826">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="1.4241476"
+         id="feGaussianBlur3828" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="3.959798"
+     inkscape:cx="85.41298"
+     inkscape:cy="941.79007"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1300"
+     inkscape:window-height="726"
+     inkscape:window-x="408"
+     inkscape:window-y="82"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:none;stroke:none"
+       id="rect3884"
+       width="66.417549"
+       height="66.417549"
+       x="51.417862"
+       y="117.24699"
+       inkscape:export-xdpi="32.310001"
+       inkscape:export-ydpi="32.310001"
+       inkscape:export-filename="/home/dewbot/git/jqrating/img/rating.png" />
+    <g
+       id="g3830"
+       transform="translate(-0.50191951,0.55125896)"
+       inkscape:export-filename="/home/dewbot/git/jqrating/img/ratingblank.png"
+       inkscape:export-xdpi="32.310001"
+       inkscape:export-ydpi="32.310001">
+      <path
+         id="path2993"
+         d="M 129.8046,86.151273 109.46131,71.205144 88.944692,85.821565 96.872884,61.855343 76.631857,46.8596 l 25.243183,0.134188 8.00697,-23.8843 7.67295,24.049155 25.18961,0.234435 -20.50103,14.729006 z"
+         inkscape:transform-center-y="-3.2366201"
+         inkscape:transform-center-x="-0.086668761"
+         style="fill:#cacac7;fill-opacity:1;stroke:none"
+         transform="translate(-23.738585,27.274119)"
+         inkscape:connector-curvature="0" />
+      <path
+         inkscape:connector-curvature="0"
+         style="fill:#ececec;fill-opacity:1;stroke:none;filter:url(#filter3826)"
+         inkscape:transform-center-x="-0.07868542"
+         inkscape:transform-center-y="-2.9384105"
+         d="M 104.21258,110.52121 85.743629,96.952139 67.117317,110.22188 74.315042,88.463786 55.938929,74.849681 78.856323,74.971505 86.125568,53.287794 93.091567,75.121172 115.96033,75.334007 97.348163,88.70595 z"
+         id="path3012" />
+    </g>
+    <path
+       inkscape:connector-curvature="0"
+       id="path3836"
+       d="m 159.46386,98.479263 -20.51662,14.616417 7.92819,-23.966218 -20.24102,-14.995743 25.24318,0.134188 8.00697,-23.8843 z"
+       inkscape:transform-center-y="-3.2366201"
+       inkscape:transform-center-x="-0.086668761"
+       style="fill:#cacac7;fill-opacity:1;stroke:none"
+       sodipodi:nodetypes="ccccccc" />
+    <path
+       inkscape:connector-curvature="0"
+       style="fill:#ececec;fill-opacity:1;stroke:none;filter:url(#filter3826)"
+       inkscape:transform-center-x="-0.07868542"
+       inkscape:transform-center-y="-2.9384105"
+       d="m 156.95938,96.447063 -16.10093,13.774817 7.19773,-21.758094 -18.37611,-13.614105 22.91739,0.121824 5.24893,-14.865181 z"
+       id="path3838"
+       sodipodi:nodetypes="ccccccc" />
+    <path
+       sodipodi:nodetypes="ccccccc"
+       style="fill:#cacac7;fill-opacity:1;stroke:none"
+       inkscape:transform-center-x="0.086668761"
+       inkscape:transform-center-y="-3.2366201"
+       d="m 172.0626,98.479263 20.51662,14.616417 -7.92819,-23.966218 20.24102,-14.995743 -25.24318,0.134188 -8.00697,-23.8843 z"
+       id="path3846"
+       inkscape:connector-curvature="0" />
+    <path
+       sodipodi:nodetypes="ccccccc"
+       id="path3848"
+       d="m 156.95938,96.447063 -16.10093,13.774817 7.19773,-21.758094 -18.37611,-13.614105 22.91739,0.121824 5.24893,-14.865181 z"
+       inkscape:transform-center-y="-2.9384105"
+       inkscape:transform-center-x="0.07868542"
+       style="fill:#ececec;fill-opacity:1;stroke:none;filter:url(#filter3826)"
+       inkscape:connector-curvature="0"
+       transform="matrix(-1,0,0,1,331.52646,0)" />
+    <g
+       id="g3896"
+       inkscape:export-filename="/home/dewbot/git/jqrating/img/rating.png"
+       inkscape:export-xdpi="32.310001"
+       inkscape:export-ydpi="32.310001">
+      <path
+         style="fill:#f2c93f;fill-opacity:1;stroke:none"
+         inkscape:transform-center-x="-0.086668761"
+         inkscape:transform-center-y="-3.2366201"
+         d="m 104.74302,181.97666 -20.343289,-14.94613 -20.516618,14.61642 7.928192,-23.96622 -20.241027,-14.99574 25.243183,0.13418 8.00697,-23.8843 7.67295,24.04916 25.189609,0.23443 -20.501029,14.72901 z"
+         id="path3852"
+         inkscape:connector-curvature="0" />
+      <path
+         id="path3854"
+         d="m 102.88959,179.07248 -18.468955,-13.56907 -18.626312,13.26974 7.197725,-21.7581 -18.376113,-13.6141 22.917394,0.12182 7.269245,-21.68371 6.965999,21.83338 22.868767,0.21283 -18.612171,13.37195 z"
+         inkscape:transform-center-y="-2.9384105"
+         inkscape:transform-center-x="-0.07868542"
+         style="fill:#ffe900;fill-opacity:1;stroke:none;filter:url(#filter3826)"
+         inkscape:connector-curvature="0" />
+    </g>
+    <path
+       sodipodi:nodetypes="ccccccc"
+       style="fill:#c7a630;fill-opacity:1;stroke:none"
+       inkscape:transform-center-x="-0.086668761"
+       inkscape:transform-center-y="-3.2366201"
+       d="m 157.44356,165.65441 -20.51662,14.61641 7.92819,-23.96621 -20.24102,-14.99575 25.24318,0.13419 8.00697,-23.8843 z"
+       id="path3864"
+       inkscape:connector-curvature="0" />
+    <path
+       sodipodi:nodetypes="ccccccc"
+       id="path3866"
+       d="m 154.93908,163.62221 -16.10093,13.77481 7.19773,-21.75809 -18.37611,-13.61411 22.91739,0.12183 5.24893,-14.86518 z"
+       inkscape:transform-center-y="-2.9384105"
+       inkscape:transform-center-x="-0.07868542"
+       style="fill:#ffcf00;fill-opacity:1;stroke:none;filter:url(#filter3826)"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path3868"
+       d="m 170.0423,165.65441 20.51662,14.61641 -7.92819,-23.96621 20.24102,-14.99575 -25.24318,0.13419 -8.00697,-23.8843 z"
+       inkscape:transform-center-y="-3.2366201"
+       inkscape:transform-center-x="0.086668761"
+       style="fill:#c7a630;fill-opacity:1;stroke:none"
+       sodipodi:nodetypes="ccccccc" />
+    <path
+       transform="matrix(-1,0,0,1,329.50616,67.175144)"
+       inkscape:connector-curvature="0"
+       style="fill:#ffcf00;fill-opacity:1;stroke:none;filter:url(#filter3826)"
+       inkscape:transform-center-x="0.07868542"
+       inkscape:transform-center-y="-2.9384105"
+       d="m 156.95938,96.447063 -16.10093,13.774817 7.19773,-21.758094 -18.37611,-13.614105 22.91739,0.121824 5.24893,-14.865181 z"
+       id="path3870"
+       sodipodi:nodetypes="ccccccc" />
+    <g
+       id="g3888"
+       transform="translate(1.2488684,-0.82949667)"
+       inkscape:export-filename="/home/dewbot/git/jqrating/img/ratingdisabled.png"
+       inkscape:export-xdpi="32.310001"
+       inkscape:export-ydpi="32.310001">
+      <path
+         style="fill:#666666;fill-opacity:1;stroke:none"
+         inkscape:transform-center-x="-0.086668761"
+         inkscape:transform-center-y="-3.2366201"
+         d="m 102.0254,250.80614 -20.343285,-14.94613 -20.516618,14.61642 7.928192,-23.96622 -20.241027,-14.99574 25.243183,0.13419 8.00697,-23.8843 7.67295,24.04915 25.189605,0.23444 -20.501025,14.729 z"
+         id="path3878"
+         inkscape:connector-curvature="0" />
+      <path
+         id="path3880"
+         d="m 100.17197,247.90196 -18.468951,-13.56907 -18.626312,13.26974 7.197725,-21.75809 -18.376113,-13.61411 22.917394,0.12183 7.269245,-21.68372 6.965999,21.83338 22.868763,0.21284 -18.612167,13.37194 z"
+         inkscape:transform-center-y="-2.9384105"
+         inkscape:transform-center-x="-0.07868542"
+         style="fill:#999999;fill-opacity:1;stroke:none;filter:url(#filter3826)"
+         inkscape:connector-curvature="0" />
+    </g>
+    <rect
+       inkscape:export-filename="/home/dewbot/git/jqrating/img/ratingdisabled.png"
+       inkscape:export-ydpi="32.310001"
+       inkscape:export-xdpi="32.310001"
+       y="185.24698"
+       x="49.949112"
+       height="66.417549"
+       width="66.417549"
+       id="rect3886"
+       style="fill:none;stroke:none" />
+    <rect
+       inkscape:export-filename="/home/dewbot/git/jqrating/img/ratingblank.png"
+       inkscape:export-ydpi="32.310001"
+       inkscape:export-xdpi="32.310001"
+       y="49.246986"
+       x="52.238934"
+       height="66.417549"
+       width="66.417549"
+       id="rect3892"
+       style="fill:none;stroke:none" />
+  </g>
+</svg>
