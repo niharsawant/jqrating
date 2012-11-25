@@ -51,7 +51,12 @@
     _setMode: function() {
       var thisref,
         _this = this;
-      if (this.options.readOnly || this.options.disabled) {
+      if (this.options.disabled) {
+        this.element.find('.ui-rating-star').removeClass('ui-rating-starred ui-rating-unstarred').addClass('ui-rating-disabled');
+      } else {
+        this.element.find('.ui-rating-star').removeClass('ui-rating-disabled');
+      }
+      if (this.options.readOnly) {
         return this.element.undelegate('.ui-rating-star', 'mouseenter').undelegate('.ui-rating-star', 'mouseleave').find('.ui-rating-star').addClass('ui-rating-readonly');
       } else {
         thisref = this;
@@ -70,15 +75,6 @@
           return thisref.options.onRate.call(thisref, count);
         }).find('.ui-rating-star').removeClass('ui-rating-readonly');
       }
-    },
-    _disable: function() {
-      this.element.find('.ui-rating-star').removeClass('ui-rating-starred ui-rating-unstarred').addClass('ui-rating-disabled');
-      return this._setMode();
-    },
-    _enable: function() {
-      this.element.find('.ui-rating-star').removeClass('ui-rating-disabled');
-      this._setValue();
-      return this._setMode();
     },
     _setOption: function(key, value) {
       switch (key) {
@@ -100,12 +96,8 @@
           return this._setMode();
         case 'disabled':
           this.options.disabled = value;
-          if (value) {
-            return this._disable();
-          } else {
-            return this._enable();
-          }
-          break;
+          this._setMode();
+          return this._setValue();
         default:
           return console.error('Invalid Option');
       }

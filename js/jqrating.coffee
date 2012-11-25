@@ -30,7 +30,14 @@ $.widget('ui.rating',
         elem.removeClass("ui-rating-starred").addClass("ui-rating-unstarred")
 
   _setMode : () ->
-    if @options.readOnly or @options.disabled
+    if @options.disabled
+      @element.find('.ui-rating-star')
+      .removeClass('ui-rating-starred ui-rating-unstarred')
+      .addClass('ui-rating-disabled')
+    else
+      @element.find('.ui-rating-star').removeClass('ui-rating-disabled')
+
+    if @options.readOnly
       @element.undelegate('.ui-rating-star', 'mouseenter')
         .undelegate('.ui-rating-star', 'mouseleave')
         .find('.ui-rating-star').addClass('ui-rating-readonly')
@@ -50,17 +57,6 @@ $.widget('ui.rating',
         )
         .find('.ui-rating-star').removeClass('ui-rating-readonly')
 
-  _disable : () ->
-    @element.find('.ui-rating-star')
-      .removeClass('ui-rating-starred ui-rating-unstarred')
-      .addClass('ui-rating-disabled')
-    @_setMode()
-
-  _enable : () ->
-    @element.find('.ui-rating-star').removeClass('ui-rating-disabled')
-    @_setValue()
-    @_setMode()
-
   _setOption : (key, value) ->
     switch key
       when 'limit'
@@ -77,8 +73,8 @@ $.widget('ui.rating',
         @_setMode()
       when 'disabled'
         @options.disabled = value
-        if value then @_disable()
-        else @_enable()
+        @_setMode()
+        @_setValue()
       else console.error('Invalid Option')
 
 )
