@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>jQRating by dewbot</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>jQRating</h1>
+        <p>jQuery plugin for Rating</p>
+
+        <p class="view"><a href="https://github.com/dewbot/jqrating">View the Project on GitHub <small>dewbot/jqrating</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/dewbot/jqrating/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/dewbot/jqrating/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/dewbot/jqrating">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>JQRating : jQuery Plugin for Rating</h1>
+
+<p>Simple jQuery plugin for rating, written in CoffeeScript and LESS.</p>
+
+<p>This plugin uses <a href="http://api.jqueryui.com/jQuery.widget">widget factory</a>, so most of the time it follows jQuery UI conventions. You can learn more about Widget Factory on its <a href="http://wiki.jqueryui.com/w/page/12138135/Widget%20factory">wiki page</a>. Even though everything is written in preprocessors like Coffeescript and LESS, compiled Javascript and CSS can also be found on respective directories.</p>
+
+<h3>Options</h3>
+
+<ul>
+<li>value    : <em>(default : 0)</em> assign number of points to be marked as starred</li>
+<li>limit    : <em>(default : 5)</em> maximum number of points one can give</li>
+<li>readOnly : <em>(default : true)</em> decides if plugin mode is readonly or editable</li>
+<li>hints    : <em>(default : ['Hated it', 'Disliked it', 'It was okay', 'Liked it', 'Loved it'])</em> tooltip to be shown on stars from left to right order_</li>
+</ul><h3>Methods</h3>
+
+<ul>
+<li>onrate : invoked when some one rates</li>
+</ul><h3>How to hack</h3>
+
+<p>Instead of adding lots of options and increasing size of code, this section depcits how to manipulate with code.</p>
+
+<ul>
+<li>
+<strong>Change/Resize Rating Image</strong> : Each star has been assigned <code>ui-rating-star</code> class in CSS/LESS. It has properties such as <code>width</code>, <code>height</code>, <code>background-size</code>; feel free to manipulate them according to your convenience. As well as in case of changing star image, selectors such as <code>ui-rating-starred</code>, <code>ui-rating-unstarred</code>, <code>ui-rating-disabled</code> has property <code>background-image</code> change it desired image path.</li>
+<li>
+<strong>Seperate Image for each Star</strong> : Each star has id called <code>ui-star-rating*n*</code> where n is index of star. If you wish to assign distinct image to each of such stars, add appropriate selectors with proper index and assign <code>background-image</code> to each of them.</li>
+<li>
+<strong>Custom Tooltips</strong> : I prefer using custom tooltips such as <a href="http://onehackoranother.com/projects/jquery/tipsy/">Tipsy</a>, you can even add custom tooltips for hints. There is a private method called <code>_setHints</code> you can add appropriate plugins in that method.</li>
+</ul><h3>Dependencies</h3>
+
+<ol>
+<li> jQuery v1.8 &lt;</li>
+<li> Widget Factory</li>
+</ol>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/dewbot">dewbot</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
