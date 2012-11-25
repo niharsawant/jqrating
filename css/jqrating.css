@@ -5,9 +5,6 @@
   cursor: pointer;
   background-size: 100%;
 }
-.ui-rating-readonly {
-  cursor: default;
-}
 .ui-rating-starred {
   background-image: url('/img/rating.png');
 }
@@ -16,4 +13,8 @@
 }
 .ui-rating-disabled {
   background-image: url('/img/ratingdisabled.png');
+}
+.ui-rating-readonly,
+.ui-rating-disabled {
+  cursor: default;
 }

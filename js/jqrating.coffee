@@ -3,6 +3,7 @@ $.widget('ui.rating',
     value    : 0
     limit    : 5
     readOnly : true
+    hints    : ['Hated it', 'Disliked it', 'It was okay', 'Liked it', 'Loved it']
     onRate   : null
 
   _create : () ->
@@ -29,13 +30,23 @@ $.widget('ui.rating',
       else
         elem.removeClass("ui-rating-starred").addClass("ui-rating-unstarred")
 
+  _setHints : () ->
+    for i in [0...@options.limit]
+      if @options.hints[i]
+        @element.find("#ui-rating-star#{i+1}").attr('title', @options.hints[i])
+
+  _removeHints : () ->
+    @element.find('.ui-rating-star').attr('title', '')
+
   _setMode : () ->
     if @options.disabled
       @element.find('.ui-rating-star')
-      .removeClass('ui-rating-starred ui-rating-unstarred')
-      .addClass('ui-rating-disabled')
+        .removeClass('ui-rating-starred ui-rating-unstarred')
+        .addClass('ui-rating-disabled')
+        @_removeHints()
     else
       @element.find('.ui-rating-star').removeClass('ui-rating-disabled')
+      @_setHints()
 
     if @options.readOnly
       @element.undelegate('.ui-rating-star', 'mouseenter')
@@ -72,6 +83,9 @@ $.widget('ui.rating',
       when 'readOnly'
         @options.readOnly = value
         @_setMode()
+      when 'hints'
+        if value instanceof Array then @options.hints = value
+        @_setHints()
       when 'disabled'
         @options.disabled = value
         @_setMode()

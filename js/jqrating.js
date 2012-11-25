@@ -5,6 +5,7 @@
       value: 0,
       limit: 5,
       readOnly: true,
+      hints: ['Hated it', 'Disliked it', 'It was okay', 'Liked it', 'Loved it'],
       onRate: null
     },
     _create: function() {
@@ -48,13 +49,30 @@
       }
       return _results;
     },
+    _setHints: function() {
+      var i, _i, _ref, _results;
+      _results = [];
+      for (i = _i = 0, _ref = this.options.limit; 0 <= _ref ? _i < _ref : _i > _ref; i = 0 <= _ref ? ++_i : --_i) {
+        if (this.options.hints[i]) {
+          _results.push(this.element.find("#ui-rating-star" + (i + 1)).attr('title', this.options.hints[i]));
+        } else {
+          _results.push(void 0);
+        }
+      }
+      return _results;
+    },
+    _removeHints: function() {
+      return this.element.find('.ui-rating-star').attr('title', '');
+    },
     _setMode: function() {
       var thisref,
         _this = this;
       if (this.options.disabled) {
         this.element.find('.ui-rating-star').removeClass('ui-rating-starred ui-rating-unstarred').addClass('ui-rating-disabled');
+        this._removeHints();
       } else {
         this.element.find('.ui-rating-star').removeClass('ui-rating-disabled');
+        this._setHints();
       }
       if (this.options.readOnly) {
         return this.element.undelegate('.ui-rating-star', 'mouseenter').undelegate('.ui-rating-star', 'mouseleave').find('.ui-rating-star').addClass('ui-rating-readonly');
@@ -96,6 +114,11 @@
         case 'readOnly':
           this.options.readOnly = value;
           return this._setMode();
+        case 'hints':
+          if (value instanceof Array) {
+            this.options.hints = value;
+          }
+          return this._setHints();
         case 'disabled':
           this.options.disabled = value;
           this._setMode();
