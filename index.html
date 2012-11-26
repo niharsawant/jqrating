@@ -7,8 +7,10 @@
   <script type="text/javascript" src="/js/jqrating.js"></script>
   <script type="text/javascript">
     $(document).ready(function() {
-      $('#rating1').rating({ disabled : true });
-    });
+      $('#rating1').rating({
+        readOnly : false,
+        onRate : function (points, hint) { console.log(points, hint); }
+      }); });
 
   </script>
 </head>

@@ -86,12 +86,13 @@
           count = parseInt(/ui-rating-star(\d+)/.exec(id)[1], 10);
           return thisref._setValue(count);
         }).delegate('.ui-rating-star', 'click', function(ev) {
-          var count, id;
+          var count, hint, id;
           id = $(this).attr('id');
           count = parseInt(/ui-rating-star(\d+)/.exec(id)[1], 10);
           thisref.options.value = count;
+          hint = thisref.options.hints[count - 1];
           if (thisref.options.onRate) {
-            return thisref.options.onRate.call(thisref, count);
+            return thisref.options.onRate.call(thisref, count, hint);
           }
         }).find('.ui-rating-star').removeClass('ui-rating-readonly');
       }

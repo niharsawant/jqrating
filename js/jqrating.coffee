@@ -64,8 +64,9 @@ $.widget('ui.rating',
           id = $(@).attr('id')
           count = parseInt(/ui-rating-star(\d+)/.exec(id)[1], 10)
           thisref.options.value = count
+          hint = thisref.options.hints[count-1]
           if thisref.options.onRate
-            thisref.options.onRate.call(thisref, count)
+            thisref.options.onRate.call(thisref, count, hint)
         )
         .find('.ui-rating-star').removeClass('ui-rating-readonly')
 
