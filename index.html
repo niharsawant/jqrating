@@ -7,16 +7,36 @@
 
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/jqrating.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
     <meta property="og:title" content="jQRating : jQuery plugin for rating"/>
-    <meta property="og:image" content="https://a248.e.akamai.net/assets.github.com/images/gravatars/gravatar-user-420.png?1345673561"/>
+    <meta property="og:image" content="http://upload.wikimedia.org/wikipedia/en/thumb/9/9e/JQuery_logo.svg/500px-JQuery_logo.svg.png"/>
     <meta property="og:description" content="Simple jQuery plugin for rating, written in CoffeeScript and LESS. Contribute to jqrating development by creating an account on GitHub."/>
 
     <meta name="description" content="Simple jQuery plugin for rating, written in CoffeeScript and LESS. Contribute to jqrating development by creating an account on GitHub." />
+
+    <script type="text/javascript" src="javascripts/jquery.js"></script>
+    <script type="text/javascript" src="javascripts/widget.js"></script>
+    <script type="text/javascript" src="javascripts/jqrating.js"></script>
+
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $('#rating-default').rating();
+        $('#rating-value').rating({ value : 4 });
+        $('#rating-edit').rating({ value : 2, readOnly : false });
+        $('#rating-limit').rating({ value : 5, limit : 7 });
+        $('#rating-callback').rating({
+          readOnly : false,
+          onRate : function (score) { alert('You have rated ' + score); }
+        });
+        $('#rating-disabled').rating({ disabled : true });
+      });
+
+    </script>
   </head>
   <body>
     <div class="wrapper">
@@ -39,6 +59,35 @@
 <p>Simple jQuery plugin for rating, written in CoffeeScript and LESS.</p>
 
 <p>This plugin uses <a href="http://api.jqueryui.com/jQuery.widget">widget factory</a>, so most of the time it follows jQuery UI conventions. You can learn more about Widget Factory on its <a href="http://wiki.jqueryui.com/w/page/12138135/Widget%20factory">wiki page</a>. Even though everything is written in preprocessors like Coffeescript and LESS, compiled Javascript and CSS can also be found on respective directories.</p>
+
+<h3>Demos</h3>
+<ul>
+  <li>Default : <span id="rating-default" class="rating-demo"></span>
+    <p><pre>$('#rating-default').rating();</pre></p>
+  </li>
+  <li>Set Value : <span id="rating-value" class="rating-demo"></span>
+    <p><pre>$('#rating-value').rating({ value : 4 });</pre></p>
+  </li>
+  <li>Edit Value : <span id="rating-edit" class="rating-demo"></span>
+    <p><pre>$('#rating-edit').rating({ value : 2, readOnly : false });</pre></p>
+  </li>
+  <li>Change Limit : <span id="rating-limit" class="rating-demo"></span>
+    <p><pre>$('#rating-limit').rating({ value : 5, limit : 7 }); </pre></p>
+  </li>
+  <li>Callback : <span id="rating-callback" class="rating-demo"></span>
+    <p><pre>
+$('#rating-limit').rating({
+  readOnly : false,
+  onRate   : function (score) {
+    alert('You have rated ' + score);
+  }
+});
+  </pre></p>
+  </li>
+  <li>Disabled : <span id="rating-disabled" class="rating-demo"></span>
+    <p><pre>$('#rating-disabled').rating({ disabled : true });</pre></p>
+  </li>
+</ul>
 
 <h3>Options</h3>
 
