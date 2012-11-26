@@ -7,7 +7,7 @@ This plugin uses [widget factory](http://api.jqueryui.com/jQuery.widget), so mos
 * value    : _(default : 0)_ assign number of points to be marked as starred
 * limit    : _(default : 5)_ maximum number of points one can give
 * readOnly : _(default : true)_ decides if plugin mode is readonly or editable
-* hints    : _(default : ['Hated it', 'Disliked it', 'It was okay', 'Liked it', 'Loved it'])_ tooltip to be shown on stars from left to right order_
+* hints    : _(default : ['Poor', 'Average', 'Good', 'Very Good', 'Excellent'])_ tooltip to be shown on stars from left to right order_
 
 ### Methods
 * onrate : invoked when some one rates
