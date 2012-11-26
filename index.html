@@ -29,6 +29,12 @@
         $('#rating-value').rating({ value : 4 });
         $('#rating-edit').rating({ value : 2, readOnly : false });
         $('#rating-limit').rating({ value : 5, limit : 7 });
+        $('#rating-hints').rating({
+          readOnly : false,
+          value : 3,
+          hints:
+            ['Hated it', 'Disliked it', 'It was okay', 'Liked it', 'Loved it']
+        });
         $('#rating-callback').rating({
           readOnly : false,
           onRate : function (score) { alert('You have rated ' + score); }
@@ -73,6 +79,18 @@
   </li>
   <li>Change Limit : <span id="rating-limit" class="rating-demo"></span>
     <p><pre>$('#rating-limit').rating({ value : 5, limit : 7 }); </pre></p>
+  </li>
+  <li>Hints : <span id="rating-hints" class="rating-demo"></span>
+    <p><pre>
+$('#rating-hints').rating({
+  readOnly : false,
+  value    : 3,
+  hints    : [
+    'Hated it', 'Disliked it', 'It was okay', 'Liked it',
+    'Loved it'
+  ]
+});
+  </pre></p>
   </li>
   <li>Callback : <span id="rating-callback" class="rating-demo"></span>
     <p><pre>

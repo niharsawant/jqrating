@@ -5,7 +5,7 @@
       value: 0,
       limit: 5,
       readOnly: true,
-      hints: ['Hated it', 'Disliked it', 'It was okay', 'Liked it', 'Loved it'],
+      hints : ['Poor', 'Average', 'Good', 'Very Good', 'Excellent'],
       onRate: null
     },
     _create: function() {
