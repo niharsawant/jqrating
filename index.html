@@ -114,10 +114,11 @@ $('#rating-limit').rating({
 <li>limit    : <em>(default : 5)</em> maximum number of points one can give</li>
 <li>readOnly : <em>(default : true)</em> decides if plugin mode is readonly or editable</li>
 <li>hints    : <em>(default : ['Poor', 'Average', 'Good', 'Very Good', 'Excellent'])</em> tooltip to be shown on stars from left to right order_</li>
+<li>onRate(points, hints) : callback function invoked when some one rates, passes score and hint (tooltip) for that point as arguments</li>
 </ul><h3>Methods</h3>
-
 <ul>
-<li>onrate : invoked when some one rates</li>
+<li>value(value) : sets value</li>
+<li>value : gets value</li>
 </ul><h3>How to hack</h3>
 
 <p>Instead of adding lots of options and increasing size of code, this section depcits how to manipulate with code.</p>
