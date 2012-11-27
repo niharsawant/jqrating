@@ -6,13 +6,13 @@
   background-size: 100%;
 }
 .ui-rating-starred {
-  background-image: url('/img/rating.png');
+  background-image: url('img/rating.png');
 }
 .ui-rating-unstarred {
-  background-image: url('/img/ratingblank.png');
+  background-image: url('img/ratingblank.png');
 }
 .ui-rating-disabled {
-  background-image: url('/img/ratingdisabled.png');
+  background-image: url('img/ratingdisabled.png');
 }
 .ui-rating-readonly,
 .ui-rating-disabled {
