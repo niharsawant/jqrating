@@ -33,21 +33,20 @@
       return _results;
     },
     _setValue: function(value) {
-      var elem, i, points, _i, _ref, _results;
+      var elem, i, points, _i, _ref;
       points = value || this.options.value;
       if (points > this.options.limit) {
         return;
       }
-      _results = [];
       for (i = _i = 0, _ref = this.options.limit; 0 <= _ref ? _i < _ref : _i > _ref; i = 0 <= _ref ? ++_i : --_i) {
         elem = this.element.find("#ui-rating-star" + (i + 1));
         if (i < points) {
-          _results.push(elem.removeClass("ui-rating-unstarred").addClass("ui-rating-starred"));
+          elem.removeClass("ui-rating-unstarred").addClass("ui-rating-starred");
         } else {
-          _results.push(elem.removeClass("ui-rating-starred").addClass("ui-rating-unstarred"));
+          elem.removeClass("ui-rating-starred").addClass("ui-rating-unstarred");
         }
       }
-      return _results;
+      return this.element;
     },
     _setHints: function() {
       var i, _i, _ref, _results;
@@ -126,6 +125,17 @@
           return this._setValue();
         default:
           return console.error('Invalid Option');
+      }
+    },
+    value: function() {
+      if (arguments.length <= 0) {
+        return this.options.value;
+      } else if (arguments.length === 1) {
+        if (isNaN(arguments[0])) {
+          return;
+        }
+        this.options.value = arguments[0];
+        return this._setValue();
       }
     }
   });

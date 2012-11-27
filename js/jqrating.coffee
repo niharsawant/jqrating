@@ -29,6 +29,7 @@ $.widget('ui.rating',
         elem.removeClass("ui-rating-unstarred").addClass("ui-rating-starred")
       else
         elem.removeClass("ui-rating-starred").addClass("ui-rating-unstarred")
+    return @element
 
   _setHints : () ->
     for i in [0...@options.limit]
@@ -92,5 +93,13 @@ $.widget('ui.rating',
         @_setMode()
         @_setValue()
       else console.error('Invalid Option')
+
+  value : () ->
+    if arguments.length <= 0
+      return @options.value
+    else if arguments.length is 1
+      if isNaN(arguments[0]) then return
+      @options.value = arguments[0]
+      @_setValue()
 
 )
